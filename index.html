@@ -1,37 +1,227 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Política de Privacidade — Finity</title>
-<style>
-body{font-family:Arial;margin:40px;line-height:1.6;max-width:900px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de Privacidade — Finity</title>
+  <meta name="description" content="Política de Privacidade do aplicativo Finity." />
+  <style>
+    :root{
+      color-scheme: light dark;
+      --bg: #0b0f19;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border: rgba(255,255,255,.10);
+      --accent:#7c3aed;
+      --accent2:#22c55e;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f7fb;
+        --card:#ffffff;
+        --text:#111827;
+        --muted:#4b5563;
+        --border: rgba(17,24,39,.12);
+        --accent:#6d28d9;
+        --accent2:#16a34a;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(34,197,94,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 60px}
+    .top{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:18px 0 8px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.75));
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .title h1{font-size:20px; margin:0}
+    .title p{margin:2px 0 0; color:var(--muted); font-size:13px}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid var(--border);
+      padding:8px 10px; border-radius:999px;
+      background: rgba(255,255,255,.04);
+      font-size:13px; color:var(--muted);
+      white-space:nowrap;
+    }
+    .badge b{color:var(--text)}
+    .card{
+      margin-top:16px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    @media (prefers-color-scheme: light){
+      .card{background: var(--card)}
+    }
+    .cardHeader{
+      padding:18px 18px 12px;
+      border-bottom:1px solid var(--border);
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .cardHeader h2{margin:0; font-size:16px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-size:13px;
+    }
+    .btn.primary{
+      border-color: rgba(124,58,237,.45);
+      background: rgba(124,58,237,.18);
+    }
+    .btn.success{
+      border-color: rgba(34,197,94,.45);
+      background: rgba(34,197,94,.16);
+    }
+    .content{padding:18px}
+    h3{margin:18px 0 8px; font-size:14px}
+    p{margin:10px 0}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:6px 0}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      margin-top:10px;
+    }
+    @media (min-width:900px){
+      .grid{grid-template-columns: 1.25fr .75fr}
+    }
+    .mini{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      background: rgba(255,255,255,.03);
+    }
+    @media (prefers-color-scheme: light){
+      .mini{background:#fff}
+    }
+    .mini h4{margin:0 0 8px; font-size:13px}
+    .k{display:flex; justify-content:space-between; gap:12px; font-size:13px; padding:8px 0; border-top:1px dashed var(--border)}
+    .k:first-of-type{border-top:none; padding-top:0}
+    footer{margin-top:18px; color:var(--muted); font-size:13px}
+    code{padding:2px 6px;border-radius:10px;border:1px solid var(--border); background:rgba(255,255,255,.04)}
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1>Política de Privacidade</h1>
+          <p>Aplicativo <b>Finity</b> • Transparência e controle para o usuário</p>
+        </div>
+      </div>
+      <div class="badge">
+        Última atualização: <b id="lastUpdated">2026-02-16</b>
+      </div>
+    </div>
 
-<h1>Política de Privacidade — Finity</h1>
+    <div class="card">
+      <div class="cardHeader">
+        <h2>Resumo</h2>
+        <div class="actions">
+          <a class="btn primary" href="./delete-account.html">Exclusão de conta</a>
+          <a class="btn" href="mailto:suporte@synfinity.com.br?subject=Privacidade%20-%20Finity">Contato</a>
+        </div>
+      </div>
 
-<p>Última atualização: 2026</p>
+      <div class="content">
+        <p class="muted">
+          Esta política explica quais dados a Finity pode tratar, para quais finalidades e quais opções você tem.
+        </p>
 
-<h2>1. Informações coletadas</h2>
-<p>A Finity pode coletar dados como e-mail, nome e informações de uso do aplicativo.</p>
+        <div class="grid">
+          <div>
+            <h3>1) Quem somos</h3>
+            <p>A <b>Finity</b> é um aplicativo que oferece funcionalidades de IA (ex.: geração de conteúdo) e recursos de conta para uso do serviço.</p>
 
-<h2>2. Uso das informações</h2>
-<p>Os dados são utilizados para fornecer e melhorar os serviços oferecidos.</p>
+            <h3>2) Dados que podemos coletar</h3>
+            <ul>
+              <li><b>Dados de conta:</b> e-mail e informações básicas de perfil (quando fornecidas).</li>
+              <li><b>Dados de uso:</b> dados técnicos e de interação para estabilidade, segurança e melhorias.</li>
+              <li><b>Conteúdo enviado:</b> prompts e arquivos que você enviar para gerar conteúdo.</li>
+            </ul>
 
-<h2>3. Compartilhamento</h2>
-<p>Não vendemos seus dados. Podemos compartilhar apenas com serviços necessários para funcionamento do aplicativo.</p>
+            <h3>3) Como usamos os dados</h3>
+            <ul>
+              <li>Fornecer o serviço e autenticação.</li>
+              <li>Suporte, segurança e prevenção de abuso.</li>
+              <li>Melhorias de produto e correções.</li>
+            </ul>
 
-<h2>4. Exclusão de conta</h2>
-<p>Você pode solicitar a exclusão da sua conta acessando:</p>
+            <h3>4) Compartilhamento</h3>
+            <p>Podemos utilizar provedores (ex.: hospedagem/APIs de IA) apenas para operar o serviço, com compartilhamento limitado ao necessário.</p>
 
-<p>
-<a href="./delete-account.html">Página de exclusão de conta</a>
-</p>
+            <h3>5) Retenção</h3>
+            <p>Retemos dados pelo tempo necessário para operar o serviço e cumprir obrigações legais. Você pode solicitar exclusão da conta a qualquer momento.</p>
 
-<h2>5. Contato</h2>
-<p>Email: suporte@synfinity.com.br</p>
+            <h3>6) Seus direitos</h3>
+            <ul>
+              <li>Solicitar acesso, correção e exclusão (quando aplicável).</li>
+              <li>Solicitar informações sobre o tratamento de dados.</li>
+            </ul>
 
+            <h3>7) Exclusão de conta</h3>
+            <p>
+              Para solicitar exclusão, acesse: <a href="./delete-account.html"><b>Página de Exclusão de Conta</b></a>.
+            </p>
+
+            <h3>8) Contato</h3>
+            <p>
+              E-mail: <a href="mailto:suporte@synfinity.com.br"><b>suporte@synfinity.com.br</b></a>
+            </p>
+
+            <h3>9) Alterações</h3>
+            <p class="muted">Podemos atualizar esta política. A data no topo será ajustada quando houver mudanças.</p>
+          </div>
+
+          <aside class="mini">
+            <h4>Informações rápidas</h4>
+            <div class="k"><span class="muted">App</span><span><b>Finity</b></span></div>
+            <div class="k"><span class="muted">Suporte</span><span><b>suporte@synfinity.com.br</b></span></div>
+            <div class="k"><span class="muted">Exclusão</span><span><a href="./delete-account.html"><b>ver instruções</b></a></span></div>
+            <div class="k"><span class="muted">Hospedagem</span><span><code>GitHub Pages</code></span></div>
+            <p class="muted" style="margin-top:10px">
+              Dica: use a página de exclusão para solicitar remoção de conta e dados associados.
+            </p>
+          </aside>
+        </div>
+
+        <footer>
+          © <span id="year"></span> Finity • Documentos públicos para usuários
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
